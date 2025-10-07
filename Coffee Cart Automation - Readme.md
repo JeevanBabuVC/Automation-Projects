@@ -413,6 +413,8 @@ The pages directory contains four-page object classes that represent the main se
 
 **Clone the repository**
 
+git clone https://github.com/JeevanBabuVC/Automation-Projects.git
+
 1. git clone <repository-url>
 2. cd CoffeeCart-Automation
 3. git status
