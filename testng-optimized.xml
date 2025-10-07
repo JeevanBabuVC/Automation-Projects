@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Coffee Cart Test Suite" parallel="false" preserve-order="true" data-provider-thread-count="1">
+    <listeners>
+        <listener class-name="com.coffeecart.listeners.TestListener"/>
+    </listeners>
+
+    <!-- Chrome Tests - Always runs first when both browsers are selected -->
+    <test name="Chrome Tests" preserve-order="true">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.coffeecart.tests.MenuTests"/>
+            <class name="com.coffeecart.tests.CartTests"/>
+            <class name="com.coffeecart.tests.CheckoutTests"/>
+            <class name="com.coffeecart.tests.EndToEndTests"/>
+        </classes>
+    </test>
+
+    <!-- Firefox Tests - Runs second when both browsers are selected -->
+    <test name="Firefox Tests" preserve-order="true">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.coffeecart.tests.MenuTests"/>
+            <class name="com.coffeecart.tests.CartTests"/>
+            <class name="com.coffeecart.tests.CheckoutTests"/>
+            <class name="com.coffeecart.tests.EndToEndTests"/>
+        </classes>
+    </test>
+</suite>
